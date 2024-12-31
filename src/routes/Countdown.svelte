@@ -1,18 +1,32 @@
 <script lang="ts">
+    import { onMount } from "svelte";
+
   let {
     countdown = $bindable()
   } = $props();
 
   let pingState = $state(false);
 
-  $effect(() => {
-    if (countdown) {
-      // if days, hours and minutes are zero and seconds is less than 10, ping
-      if ((countdown as any).days === 0 && (countdown as any).hours === 0 && (countdown as any).minutes === 0 && (countdown as any).seconds < 59) {
-        pingState=true;
-      }
+  onMount(() => {
+    setInterval(() => {
+    if ((countdown as any).days == 0 && 
+      (countdown as any).hours == 0 && 
+      (countdown as any).minutes == 0 && 
+      (countdown as any).seconds <= 59) {
+      pingState=true;  // Use .set() to update the state
     }
+    }, 1000);
   })
+  
+  // $effect(() => {
+  //   countdown;
+  //   if ((countdown as any).days == 0 && 
+  //     (countdown as any).hours == 0 && 
+  //     (countdown as any).minutes == 0 && 
+  //     (countdown as any).seconds <= 59) {
+  //     pingState=true;  // Use .set() to update the state
+  //   }
+  // })
 </script>
 
 <section class="p-2 h-screen flex flex-col items-center justify-center space-y-12">

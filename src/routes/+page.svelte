@@ -59,8 +59,8 @@
 
 
   let now = new Date();
-  let targetDate: Date = new Date(now.getTime() + 119 * 1000);
-  // let targetDate = new Date('2025-01-01T00:00:00');
+  // let targetDate: Date = new Date(now.getTime() + 65 * 1000);
+  let targetDate = new Date('2025-01-01T00:00:00');
   let message: string = "Happy New Year 2025";
 
   // Example usage
