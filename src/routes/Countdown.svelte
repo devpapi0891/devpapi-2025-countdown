@@ -17,7 +17,7 @@
 
 <section class="p-2 h-screen flex flex-col items-center justify-center space-y-12">
   <h1 
-    class="font-extrabold text-lg sm:text-3xl md:text-5xl animate-pulse
+    class="font-extrabold text-lg sm:text-3xl md:text-5xl animate-pulseX
     bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-transparent bg-clip-text
     "
   >New Year Count Down</h1>
